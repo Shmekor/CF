@@ -4,8 +4,12 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "@babel/core": "^7.7.2",
+    "@babel/node": "^7.7.0",
+    "@babel/preset-env": "^7.7.1",
     "@zeit/next-css": "1.0.1",
     "bootstrap": "4.3.1",
+    "dotenv": "^8.2.0",
     "next": "^9.1.3",
     "react": "^16.11.0",
     "react-bootstrap": "1.0.0-beta.14",
@@ -14,8 +18,11 @@
   "devDependencies": {},
   "scripts": {
     "dev": "next",
-    "build": "next build",
-    "start": "next start"
+    "build": "npm run getproducts && next build",
+    "start": "next start",
+    "export": "next export",
+    "postinstall": "npm run getproducts",
+    "getproducts": "babel-node helpers/getproducts.js install"
   },
   "repository": {
     "type": "git",
