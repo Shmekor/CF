@@ -22,7 +22,8 @@
     "start": "next start",
     "export": "next export",
     "postinstall": "npm run getproducts",
-    "getproducts": "babel-node helpers/getproducts.js install"
+    "getproducts": "babel-node helpers/getproducts.js install",
+    "netlify_build": "npm run getproducts && next build && next export"
   },
   "repository": {
     "type": "git",
